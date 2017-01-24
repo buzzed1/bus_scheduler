@@ -18,13 +18,14 @@ public class Person {
     private int aAge;
     private int aCellPhone;
     private int aHomePhone;
+    private String result;
     
     //***********************************************************************
     //Constructor(s).
     //***********************************************************************
     
     public Person(){
-        
+        result = "";
     }
     
     public Person(String firstname, String lastname){
@@ -105,4 +106,15 @@ public class Person {
         return aHomePhone;
     }
     
+    @Override
+    public String toString(){
+        result += "      Name: "+getFirstName()+ " " + getLastName()+"\n";
+        result += "     Email: "+getEmail()+"\n";
+        result += "   Address: "+getAddress()+"\n";
+        result += "       Age: "+ getAge()+"\n";
+        result += "      Cell: "+getCellPhone()+"\n";
+        result += "Home Phone: "+getHomePhone()+"\n";
+        
+        return result;
+    }
 }
