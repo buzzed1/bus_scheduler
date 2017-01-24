@@ -10,5 +10,11 @@ package bus_scheduler;
  * @author Stephen Smith
  */
 public class Passenger extends Person{
+    private int aFare;
+    private int aSeat;
     
+    public Passenger(String firstname, String lastname){
+        super(firstname, lastname);
+        
+    }
 }
