@@ -6,16 +6,103 @@
 package bus_scheduler;
 
 /**
- *
- * @author Steve
+ * This person class tracks various aspects of a person and is the parent class
+ * of passenger.
+ * @author Stephen Smith
  */
 public class Person {
-    private String firstname;
-    private String lastname;
-    private String email;
-    private String address;
-    private int age;
-    private int cellphone;
-    private int homephone;
+    private String aFirstName;
+    private String aLastName;
+    private String aEmail;
+    private String aAddress;
+    private int aAge;
+    private int aCellPhone;
+    private int aHomePhone;
+    
+    //***********************************************************************
+    //Constructor(s).
+    //***********************************************************************
+    
+    public Person(){
+        
+    }
+    
+    public Person(String firstname, String lastname){
+        aFirstName = firstname;
+        aLastName = lastname;
+        
+        //***************************************
+        // Validate inputs
+        //***************************************
+        
+        if (firstname == "" || lastname == ""){
+            System.out.println("Names cannot be blank");
+            }
+       
+    }
+    
+    //********************************************
+    // Set methods
+    //********************************************
+    
+    public void setFirstName(String firstname){
+        aFirstName = firstname;
+    }
+    
+    public void setLastName(String lastname){
+        aLastName = lastname;
+    }
+    
+    public void setEmail(String email){
+        aEmail = email;
+    }
+    
+    public void setAddress(String address){
+        aAddress = address;
+    }
+    
+    public void setAge(int age){
+        aAge = age;
+    }
+    
+    public void setCellPhone(int cellphone){
+        aCellPhone = cellphone;
+    }
+    
+    public void setHomePhone(int homephone){
+        aHomePhone = homephone;
+    }
+    
+    //*****************************************
+    // get methods
+    //*****************************************
+    
+    public String getFirstName(){
+        return aFirstName;
+    }
+    
+    public String getLastName(){
+        return aLastName;
+    }
+    
+    public String getEmail(){
+        return aEmail;
+    }
+    
+    public String getAddress(){
+        return aAddress;
+    }
+    
+    public int getAge(){
+        return aAge;
+    }
+    
+    public int getCellPhone(){
+        return aCellPhone;
+    }
+    
+    public int getHomePhone(){
+        return aHomePhone;
+    }
     
 }
