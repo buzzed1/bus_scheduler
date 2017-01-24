@@ -86,6 +86,10 @@ public class Person {
         return aLastName;
     }
     
+    public String getName(){
+        return aFirstName + " "+aLastName;
+    }
+    
     public String getEmail(){
         return aEmail;
     }

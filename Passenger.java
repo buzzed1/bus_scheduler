@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package bus_scheduler;
+import java.text.NumberFormat;
 
 /**
  *
@@ -15,17 +16,19 @@ public class Passenger extends Person{
     private String result;
     private boolean child;
     private boolean adult;
+    NumberFormat fmt;
     
-    public Passenger(String firstname, String lastname, String state){
+    public Passenger(String firstname, String lastname){
         super(firstname, lastname);
-        if(state.equals("A")){
+        fmt = NumberFormat.getCurrencyInstance();
+       /* if(state.equals("A")){
             adult = true;
             aFare = 1200;
         }
         else if(state.equals("C")){
             child = true;
             aFare = 600;
-    }
+    }*/
         result = "";
         
     }
@@ -78,7 +81,7 @@ public class Passenger extends Person{
         
         result +=       " Name: "+getFirstName()+ " " + getLastName()+"\n";
         result +=       "State: "+ getState()+"\n";
-       result +=         "Fare: "+getFare()+"\n";
+       result +=         "Fare: "+fmt.format(getFare())+"\n";
        result +=  "Seat Number: "+getSeatNumber()+ "\n";
        
        return result;
