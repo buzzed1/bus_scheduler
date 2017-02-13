@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bus_scheduler;
 
+package bus_scheduler;
+import javax.swing.JOptionPane;
 /**
  * This person class tracks various aspects of a person and is the parent class
  * of passenger.
@@ -19,6 +20,7 @@ public class Person {
     private int aCellPhone;
     private int aHomePhone;
     private String result;
+    private String message;
     
     //***********************************************************************
     //Constructor(s).
@@ -26,20 +28,19 @@ public class Person {
     
     public Person(){
         result = "";
+        
     }
     
     public Person(String firstname, String lastname){
         aFirstName = firstname;
         aLastName = lastname;
-        
-        //***************************************
-        // Validate inputs
-        //***************************************
-        
-        if (firstname == "" || lastname == ""){
-            System.out.println("Names cannot be blank");
-            }
-       
+        message = "Name cannot be blank";
+        // ToDo
+        // validate inputs.
+        if(aFirstName == "" || aLastName == ""){
+            JOptionPane.showMessageDialog(null, message);
+            System.exit(0);
+        }
     }
     
     //********************************************

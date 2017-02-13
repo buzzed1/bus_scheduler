@@ -18,19 +18,19 @@ public class Passenger extends Person{
     private boolean adult;
     NumberFormat fmt;
     
-    public Passenger(String firstname, String lastname){
+    public Passenger(String firstname, String lastname, String state){
         super(firstname, lastname);
         fmt = NumberFormat.getCurrencyInstance();
-       /* if(state.equals("A")){
+        if(state.equals("A")){
             adult = true;
             aFare = 1200;
         }
         else if(state.equals("C")){
             child = true;
             aFare = 600;
-    }*/
+    }
         result = "";
-        
+        aSeatNumber = 0;
     }
     
     //*****************************
