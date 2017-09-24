@@ -25,10 +25,13 @@ public class Passenger extends Person{
             adult = true;
             aFare = 1200;
         }
-        else if(state.equals("C")){
+        if(state.equals("C")){
             child = true;
             aFare = 600;
-    }
+         }
+        else{
+            System.out.println("Please enter either A or C");   
+        }
         result = "";
         aSeatNumber = 0;
     }
