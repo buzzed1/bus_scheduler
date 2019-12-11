@@ -12,7 +12,8 @@ import java.text.NumberFormat;
  */
 public class Passenger extends Person{
     private int aFare;
-    private int aSeatNumber;
+    public static int aSeatNumber = 1;
+    private int aSeat;
     private String result;
     private boolean child;
     private boolean adult;
@@ -33,7 +34,8 @@ public class Passenger extends Person{
             System.out.println("Please enter either A or C");   
         }
         result = "";
-        aSeatNumber = 0;
+        aSeat = aSeatNumber;
+        aSeatNumber++;
     }
     
     //*****************************
@@ -63,7 +65,7 @@ public class Passenger extends Person{
     // get methods
     //******************************
     public int getSeatNumber(){
-        return aSeatNumber;
+        return aSeat;
     }
     
     public int getFare(){
