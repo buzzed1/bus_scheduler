@@ -15,62 +15,67 @@ public class Passenger extends Person{
     public static int aSeatNumber = 1;
     private int aSeat;
     private String result;
-    private boolean child;
-    private boolean adult;
+    private boolean child = false;
+    private boolean adult = false;
     NumberFormat fmt;
-    
+
     public Passenger(String firstname, String lastname, String state){
         super(firstname, lastname);
+
         fmt = NumberFormat.getCurrencyInstance();
-        if(state.equals("A")){
-            adult = true;
+        state.toLowerCase();
+
+        if(state.equals("a")){
             aFare = 1200;
         }
-        if(state.equals("C")){
+        else if(state.equals("c")){
             child = true;
             aFare = 600;
          }
         else{
-            System.out.println("Please enter either A or C");   
+            System.out.println("Passenger state Check: Please enter either A or C");
         }
+
         result = "";
+
         aSeat = aSeatNumber;
+
         aSeatNumber++;
     }
-    
+
     //*****************************
     // set methods
     //*****************************
-    
+
     public void setFare(int fare){
         aFare = fare;
     }
-    
+
     public void setSeat(int seatnumber){
         aSeatNumber = seatnumber;
     }
-    
+
     public void setState(String state){
         if(state.equals("A") || state.equals("Adult")){
             adult = true;
-            
+
         }
         else if(state.equals("C") || state.equals("Child")){
             child = true;
+        }
     }
-    }
-    
+
     //******************************
     // get methods
     //******************************
     public int getSeatNumber(){
         return aSeat;
     }
-    
+
     public int getFare(){
         return aFare;
     }
-    
+
     public String getState(){
         if (child){
             return "Child Fare";
@@ -79,15 +84,15 @@ public class Passenger extends Person{
             return "Adult Fare";
         }
     }
-    
+
     @Override
     public String toString(){
-        
-        result +=       " Name: "+getFirstName()+ " " + getLastName()+"\n";
-        result +=       "State: "+ getState()+"\n";
-       result +=         "Fare: "+fmt.format(getFare())+"\n";
-       result +=  "Seat Number: "+getSeatNumber()+ "\n";
-       
+
+      result +=  "Name: "+ getFirstName() + " " + getLastName()+"\n";
+      result +=  "State: " + getState() +"\n";
+      result +=  "Fare: " + fmt.format(getFare()) +"\n";
+      result +=  "Seat Number: " + getSeatNumber() + "\n";
+
        return result;
     }
 }
