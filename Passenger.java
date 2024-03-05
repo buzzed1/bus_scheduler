@@ -57,7 +57,6 @@ public class Passenger extends Person{
         }
         else if(state.equals("C") || state.equals("Child")){
             child = true;
-           
     }
     }
     
